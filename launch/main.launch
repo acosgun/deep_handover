@@ -1,0 +1,8 @@
+<launch>
+  <rosparam param="joy_node/dev">"/dev/input/js0"</rosparam>
+  <node pkg="joy" name="joystick" type="joy_node"/>
+  <node pkg="deep_handover" name="state_machine" type="state_machine.py" output="screen"/>
+  <node pkg="ros_ur_driver" name="driver" type="ur_driver_lite.py" output="screen"/>
+  <include file="/home/acrv/catkin_ws/src/realsense/realsense2_camera/launch/rs_rgbd.launch">
+  </include>  
+</launch>
